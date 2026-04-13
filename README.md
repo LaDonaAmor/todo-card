@@ -23,13 +23,13 @@ https://github.com/LaDonaAmor/todo-card
 1. Clone the repository:
 
    ```
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/LaDonaAmor/todo-card.git
    ```
 
 2. Navigate into the project folder:
 
    ```
-   cd your-repo-name
+   cd todo-card
    ```
 
 3. Open `index.html` in your browser:
@@ -76,7 +76,7 @@ https://github.com/LaDonaAmor/todo-card
 * Chose **vanilla JavaScript** instead of a framework (e.g., React) to align with task requirements.
 * Time updates every **60 seconds** instead of real-time seconds to reduce unnecessary re-renders.
 * Did not persist state (e.g., checkbox state resets on refresh) to keep scope aligned with Stage 0.
-* Minimal animations are used to prioritise clarity and performance.
+* Minimal animations were used to prioritise clarity and performance.
 
 ---
 
