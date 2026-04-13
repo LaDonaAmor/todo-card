@@ -15,12 +15,12 @@
             <header class="card-header">
                 <div class="task-header">
 
-                    <input type="checkbox" id="task-complete" data-testid="test-todo-complete-toggle"
+                    <input type="checkbox" class="task-complete" data-testid="test-todo-complete-toggle"
                         aria-labelledby="task-title" />
-
                     <h2 id="task-title" class="title" data-testid="test-todo-title">
                         Finish Frontend Task
                     </h2>
+
                 </div>
             </header>
 
@@ -33,7 +33,7 @@
                     High
                 </span>
 
-                <span class="status pending" data-testid="test-todo-status" aria-label="Task status: Pending">
+                <span class="status pending" data-testid="test-todo-status" aria-label="Pending">
                     Pending
                 </span>
             </div>
@@ -45,15 +45,15 @@
                     </time>
                 </span>
 
-                <time class="time-remaining" data-testid="test-todo-time-remaining" aria-live="polite">
+                <span class="time-remaining" data-testid="test-todo-time-remaining" aria-live="polite">
                     Due in 3 days
-                </time>
+                </span>
             </div>
 
             <ul class="tag-container" role="list" data-testid="test-todo-tags">
                 <li class="tag tag-work" data-testid="test-todo-tag-work">Work</li>
                 <li class="tag tag-urgent" data-testid="test-todo-tag-urgent">Urgent</li>
-                <li class="tag tag-urgent" data-testid="test-todo-tag-design">Design</li>
+                <li class="tag tag-design" data-testid="test-todo-tag-design">Design</li>
 
             </ul>
 
