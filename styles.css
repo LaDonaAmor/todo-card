@@ -57,8 +57,8 @@ body {
 }
 
 .card-container:hover {
-  transform: translate(-4px);
-  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  transform: translate(-0.25rem);
+  box-shadow: 0 1.25rem 2.1875rem rgba(0, 0, 0, 0.1);
 }
 
 .card-container .view-mode {
@@ -107,14 +107,17 @@ body {
 }
 
 .collapsible-section {
-  max-height: 4.5rem;
   overflow: hidden;
-  transition: max-height 0.25s ease;
-  margin: 0.25rem 0;
+  transform-origin: top;
+  transform: scaleY(1);
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
 }
 
 .collapsible-section.expanded {
   max-height: 31.25rem;
+  transform: scaleY(1);
 }
 
 .collapsible-section p {
@@ -270,7 +273,7 @@ body {
 .action-section {
   display: flex;
   gap: 0.75rem;
-  margin-top: 0.25rem;
+  margin: 0.25rem;
 }
 
 .action-section button {
@@ -294,12 +297,12 @@ body {
 }
 
 .action-section button:last-child {
-  background: #fa8d8d;
-  color: var(--red);
+  background: #b00020;
+  color: #ffffff;
 }
 
 .action-section button:last-child:hover {
-  background: #ffd6d6;
+  background: #7f0015;
 }
 
 input[type="checkbox"] {
@@ -313,8 +316,8 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 0.1875rem solid rgba(135, 196, 255, 0.5);
-  outline-offset: 0.1875rem;
+  outline: 0.1875rem solid var(--light-blue);
+  outline-offset: 0.125rem;
 }
 
 input,
