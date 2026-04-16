@@ -1,74 +1,145 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>todo-card</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
 </head>
 
 <body>
     <main>
         <article class="card-container" data-testid="test-todo-card">
-            <header class="card-header">
-                <div class="task-header">
+            <div class="view-mode">
+                <header class="card-header">
+                    <div class="task-header">
+                        <input type="checkbox" class="task-complete" data-testid="test-todo-complete-toggle"
+                            aria-labelledby="task-title" />
+                        <h2 id="task-title" class="title" data-testid="test-todo-title">
+                            Finish Frontend Task
+                        </h2>
+                    </div>
+                </header>
 
-                    <input type="checkbox" class="task-complete" data-testid="test-todo-complete-toggle"
-                        aria-labelledby="task-title" />
-                    <h2 id="task-title" class="title" data-testid="test-todo-title">
-                        Finish Frontend Task
-                    </h2>
-
+                <div class="collapsible-section" id="test-todo-collapsible-section"
+                    data-testid="test-todo-collapsible-section">
+                    <p class="description" data-testid="test-todo-description">
+                        Ensure stage 0 task is completed following given instructions
+                        strictly.
+                    </p>
                 </div>
-            </header>
-
-            <p class="description" data-testid="test-todo-description">
-                Ensure stage 0 task is completed following given instructions strictly.
-            </p>
-
-            <div class="info-section">
-                <span class="priority high" data-testid="test-todo-priority" aria-label="High priority task">
-                    High
-                </span>
-
-                <span class="status pending" data-testid="test-todo-status" aria-label="Pending">
-                    Pending
-                </span>
-            </div>
-
-            <div class="date-section">
-                <span> Due:
-                    <time datetime="2026-04-15T18:00" data-testid="test-todo-due-date">
-                        Apr 15, 2026
-                    </time>
-                </span>
-
-                <span class="time-remaining" data-testid="test-todo-time-remaining" aria-live="polite">
-                    Due in 3 days
-                </span>
-            </div>
-
-            <ul class="tag-container" role="list" data-testid="test-todo-tags">
-                <li class="tag tag-work" data-testid="test-todo-tag-work">Work</li>
-                <li class="tag tag-urgent" data-testid="test-todo-tag-urgent">Urgent</li>
-                <li class="tag tag-design" data-testid="test-todo-tag-design">Design</li>
-
-            </ul>
-
-            <div class="action-section">
-                <button type="button" data-testid="test-todo-edit-button" aria-label="Edit Task">
-                    Edit
+                <button class="expand-toggle" data-testid="test-todo-expand-toggle" aria-label="Expand"
+                    aria-expanded="false" aria-controls="test-todo-collapsible-section">
+                    Expand
                 </button>
-                <button type="button" data-testid="test-todo-delete-button" aria-label="Delete Task">
-                    Delete
-                </button>
+
+
+                <div class="info-section">
+                    <div class="priority-block">
+                        <span class="priority-indicator high" data-testid="test-todo-priority-indicator"
+                            aria-label="High priority">
+
+                        </span>
+                        <span class="priority high" data-testid="test-todo-priority" aria-label="High priority task">
+                            High
+                        </span>
+
+                        <span class="status pending" data-testid="test-todo-status" aria-label="Pending">
+                            Pending
+                        </span>
+                    </div>
+
+
+                    <div class="status-block">
+                        <!-- STATUS: Left Border Accent -->
+                        <label for="status-select">Status</label>
+                        <select name="status" id="status-select" class="status-select"
+                            data-testid="test-todo-status-control">
+                            <option value="pending" selected>Pending</option>
+                            <option value="in-progress">In Progress</option>
+                            <option value="done">Done</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="date-section">
+                    <span>
+                        Due:
+                        <time datetime="2026-04-15T18:00" data-testid="test-todo-due-date">
+                            Apr 15, 2026
+                        </time>
+                    </span>
+
+                    <span class="time-remaining" data-testid="test-todo-time-remaining" aria-live="polite">
+                        Due in 3 days
+                    </span>
+                    <span class="overdue-indicator" data-testid="test-todo-overdue-indicator" aria-live="polite" hidden>
+                        Overdue
+                    </span>
+                </div>
+
+                <ul class="tag-container" role="list" data-testid="test-todo-tags">
+                    <li class="tag tag-work" data-testid="test-todo-tag-work">Work</li>
+                    <li class="tag tag-urgent" data-testid="test-todo-tag-urgent">
+                        Urgent
+                    </li>
+                    <li class="tag tag-design" data-testid="test-todo-tag-design">
+                        Design
+                    </li>
+                </ul>
+
+                <div class="action-section">
+                    <button type="button" data-testid="test-todo-edit-button" aria-label="Edit Task">
+                        Edit
+                    </button>
+                    <button type="button" data-testid="test-todo-delete-button" aria-label="Delete Task">
+                        Delete
+                    </button>
+                </div>
             </div>
 
+
+            <!-- EDITING MODE -->
+            <form data-testid="test-todo-edit-form" aria-labelledby="edit-form">
+                <h2 id="edit-form">Edit Task</h2>
+                <label for="edit-title">Title</label>
+                <input type="text" id="edit-title" class="edit-title-input" data-testid="test-todo-edit-title-input" />
+
+                <label for="edit-description">Description</label>
+                <textarea name="textarea" id="edit-description"
+                    data-testid="test-todo-edit-description-input"></textarea>
+
+                <div class="info-section">
+                    <label for="priority-select">Priority</label>
+                    <select name="priority" id="priority-select" class="priority-select"
+                        data-testid="test-todo-edit-priority-select">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+
+                <div class="date-section">
+                    <span>
+                        <label for="due-date">Due:</label>
+                        <input type="datetime-local" name="due-date" id="due-date"
+                            data-testid="test-todo-edit-due-date-input" />
+                    </span>
+                </div>
+
+                <div class="action-section">
+                    <button type="submit" data-testid="test-todo-save-button" aria-label="Save Task">
+                        Save
+                    </button>
+                    <button type="button" data-testid="test-todo-cancel-button" aria-label="Cancel Task">
+                        Cancel
+                    </button>
+                </div>
+            </form>
         </article>
     </main>
-
 </body>
 
 </html>
