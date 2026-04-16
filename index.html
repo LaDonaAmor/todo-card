@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Interactive Todo Card with editing, status control, priority levels, and real-time due date tracking." />
     <title>todo-card</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
@@ -72,7 +74,8 @@
                         </time>
                     </span>
 
-                    <span class="time-remaining" data-testid="test-todo-time-remaining" aria-live="polite">
+                    <span class="time-remaining" data-testid="test-todo-time-remaining" aria-live="polite"
+                        role="status">
                         Due in 3 days
                     </span>
                     <span class="overdue-indicator" data-testid="test-todo-overdue-indicator" aria-live="polite" hidden>
